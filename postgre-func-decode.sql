@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION public.kitworkid_decode(id_str text)
+CREATE OR REPLACE FUNCTION public.kitid_decode(id_str text)
  RETURNS timestamp with time zone
  LANGUAGE plpgsql
  IMMUTABLE

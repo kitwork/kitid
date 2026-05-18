@@ -74,7 +74,13 @@ Built with `math/rand/v2` and strict stack arrays (`[256]byte`). KitID operates 
 
 ---
 
-## 🚀 Usage (Golang)
+## 🚀 Installation
+
+```bash
+go get github.com/kitwork/kitid
+```
+
+## 💻 Usage (Golang)
 
 ```go
 package main
@@ -101,17 +107,18 @@ func main() {
 ## 🐘 Usage (PostgreSQL Native)
 
 Seamless Backend-to-Database parity. No more drifting ID formats.
+*Note: Run `postgre-func.sql` and `postgre-func-decode.sql` in your database first to create these functions.*
 
 ```sql
 -- Create the atomic sequence
-CREATE SEQUENCE public.kitworkid_seq MAXVALUE 4095 CYCLE;
+CREATE SEQUENCE public.kitid_seq MAXVALUE 4095 CYCLE;
 
 -- Generate natively in SQL
-SELECT public.kitworkid();
+SELECT public.kitid();
 -- Output: 027ctnihvpzsmr8xjd5luwfqgkay36o941be
 
 -- Decode KitID strictly in SQL
-SELECT public.kitworkid_decode('027ctnihvpzsmr8xjd5luwfqgkay36o941be');
+SELECT public.kitid_decode('027ctnihvpzsmr8xjd5luwfqgkay36o941be');
 -- Output: 2026-05-18 03:10:28.39737+00
 ```
 

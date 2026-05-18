@@ -1,5 +1,5 @@
 -- Tạo bộ đếm Atomic 12-bit (Tự động reset khi chạm 4095)
-CREATE SEQUENCE IF NOT EXISTS public.kitworkid_seq 
+CREATE SEQUENCE IF NOT EXISTS public.kitid_seq 
     MINVALUE 0 
     MAXVALUE 4095 
     START WITH 0 
@@ -41,7 +41,7 @@ BEGIN
     END IF;
 
     -- Rút Sequence thay cho rand() (Đảm bảo Atomic 100%)
-    seq_val := nextval('public.kitworkid_seq');
+    seq_val := nextval('public.kitid_seq');
 
     -- Bitmask t = (t &^ 0xfff) | seq y hệt Golang (~ là toán tử NOT của Postgres)
     t := ((now_nano - epoch_nano) & ~4095::bigint) | seq_val;
