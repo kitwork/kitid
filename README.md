@@ -81,7 +81,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/kitwork/engine/id"
+	"github.com/kitwork/kitid"
 )
 
 func main() {
