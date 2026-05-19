@@ -1,4 +1,4 @@
-# KitID — Sortable IDs for modern systems
+# KitID 
 
 KitID is not just a "UUID replacement." It is an industrial-grade, strictly sortable, and highly aesthetic unique identifier generator. By completely abandoning the traditional `bytes -> baseN` encoding in favor of a `timestamp -> permutation path -> shuffled identity` architecture, KitID brings "personality" and an organic feel to database infrastructure.
 
